@@ -1,3 +1,3 @@
-export class Registro{
-    constructor(public salesperson: string, public product: string){}
+export class Registro {
+    constructor(public salesperson: string, public product: string) {}
 }

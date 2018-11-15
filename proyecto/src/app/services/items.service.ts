@@ -1,6 +1,6 @@
-import { Subject } from "rxjs";
-import { Item } from "../shared/item.model";
+import { Subject } from 'rxjs';
+import { Item } from '../shared/item.model';
 
-export class ItemsService{
+export class ItemsService {
     itemsChanged = new Subject<Item[]>();
 }
