@@ -7,6 +7,18 @@ import { AgregarComponent } from './agregar/agregar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { SecondComponent } from './second/second.component';
+import { AgregarActionsComponent } from './agregar/agregar-actions/agregar-actions.component';
+import { AgregarListComponent } from './agregar/agregar-list/agregar-list.component';
+
+// firebase
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
+// service
+import { ItemsService } from './services/items.service';
 
 @NgModule({
   declarations: [
@@ -15,13 +27,21 @@ import { SecondComponent } from './second/second.component';
     HeaderComponent,
     AgregarComponent,
     LoginComponent,
-    SecondComponent
+    SecondComponent,
+    AgregarActionsComponent,
+    AgregarListComponent
     ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
-  providers: [],
+  providers: [ItemsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

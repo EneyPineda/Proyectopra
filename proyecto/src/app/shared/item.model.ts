@@ -1,4 +1,5 @@
 export class Item {
-    constructor(public quantity: number) {
-    }
+    iditem: string;
+    idUser: string;
+    quantity: number;
 }
