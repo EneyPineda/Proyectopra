@@ -6,7 +6,6 @@ import { HeaderComponent } from './header/header.component';
 import { AgregarComponent } from './agregar/agregar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
-import { SecondComponent } from './second/second.component';
 import { AgregarActionsComponent } from './agregar/agregar-actions/agregar-actions.component';
 import { AgregarListComponent } from './agregar/agregar-list/agregar-list.component';
 
@@ -21,6 +20,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { ItemsService } from './services/items.service';
 import { SugerenciasComponent } from './principal/sugerencias/sugerencias.component';
 import { RegisterComponent } from './register/register.component';
+import { AuthService } from './services/auth.service';
+import { SugerenciasService } from './services/sugerencias.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,6 @@ import { RegisterComponent } from './register/register.component';
     HeaderComponent,
     AgregarComponent,
     LoginComponent,
-    SecondComponent,
     AgregarActionsComponent,
     AgregarListComponent,
     SugerenciasComponent,
@@ -45,7 +45,12 @@ import { RegisterComponent } from './register/register.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule
   ],
-  providers: [ItemsService],
+  providers: [
+    ItemsService,
+    AuthService,
+    AngularFireAuth,
+    SugerenciasService
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
