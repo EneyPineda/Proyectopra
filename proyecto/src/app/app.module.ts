@@ -19,6 +19,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 // service
 import { ItemsService } from './services/items.service';
+import { SugerenciasComponent } from './principal/sugerencias/sugerencias.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { ItemsService } from './services/items.service';
     LoginComponent,
     SecondComponent,
     AgregarActionsComponent,
-    AgregarListComponent
+    AgregarListComponent,
+    SugerenciasComponent,
+    RegisterComponent
     ],
   imports: [
     BrowserModule,
